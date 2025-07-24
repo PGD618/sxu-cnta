@@ -71,6 +71,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
                                 alt={`Volunteer moment ${index + 1}`}
                                 width={800}
                                 height={500}
+                                loading="lazy"
                                 className="rounded-lg object-cover w-full"
                             />
                         </div>

@@ -1,5 +1,7 @@
 import Link from 'next/link';
-import { ArrowRight, Award, Briefcase, Code, Handshake, Heart, ShieldCheck, Star, Users } from 'lucide-react';
+import { ArrowRight, Award, Briefcase, Code, Handshake, Heart, Star } from 'lucide-react';
+import InfoCard from '@/components/ui/InfoCard';
+import PageHeader from '@/components/ui/PageHeader';
 
 // 视觉建议：在标题旁添加二进制代码背景装饰
 const BinaryBackground = ({ text }: { text: string }) => (
@@ -10,16 +12,6 @@ const BinaryBackground = ({ text }: { text: string }) => (
     </div>
 );
 
-const InfoCard = ({ icon, title, children }: { icon: React.ReactNode, title: string, children: React.ReactNode }) => (
-    <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700 hover:border-cyan-400 transition-all duration-300">
-        <div className="flex items-center mb-4">
-            {icon}
-            <h3 className="text-xl font-bold ml-3 text-white">{title}</h3>
-        </div>
-        <div className="text-gray-400">{children}</div>
-    </div>
-);
-
 export default function AboutPage() {
     return (
         <div className="container mx-auto px-6 py-20 text-white">
@@ -27,9 +19,11 @@ export default function AboutPage() {
             <section className="relative text-center mb-24 py-16 overflow-hidden">
                 <BinaryBackground text="01000011 01001110 01010100 01000001" />
                 <div className="relative z-10">
-                    <h1 className="text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 pb-4">
-                        关于CNTA
-                    </h1>
+                    <PageHeader
+                        title="关于CNTA"
+                        description=""
+                        titleClassName="bg-gradient-to-r from-cyan-400 to-purple-500"
+                    />
                     <div className="max-w-3xl mx-auto text-lg text-gray-300 mt-4 text-left space-y-6">
                         <div>
                             <h3 className="text-2xl font-bold text-cyan-400 mb-2">协会简介</h3>

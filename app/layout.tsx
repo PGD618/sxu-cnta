@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import "./mobile.css";
 import Navbar from "@/components/ui/Navbar";
-import ParticlesBackground from "@/components/ParticlesBackground";
+import DynamicParticles from "@/components/DynamicParticles";
 import GlobalEffects from "@/components/GlobalEffects";
 import { ParallaxProvider } from 'react-scroll-parallax';
 
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <body className={inter.className}>
-        <ParticlesBackground />
+        <DynamicParticles />
         <GlobalEffects />
         <div className="relative z-10">
           <Navbar />
