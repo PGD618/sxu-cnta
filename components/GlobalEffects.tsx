@@ -6,7 +6,7 @@ import './GlobalEffects.css';
 
 const GlobalEffects = () => {
     const transitionRef = useRef<HTMLDivElement>(null);
-    const audioRef = useRef<HTMLAudioElement | null>(null);
+    // const audioRef = useRef<HTMLAudioElement | null>(null);
     const pathname = usePathname();
     const previousPathname = useRef(pathname);
 
@@ -14,8 +14,8 @@ const GlobalEffects = () => {
     useEffect(() => {
         // 懒加载音频资源
         if (typeof window !== 'undefined') {
-            audioRef.current = new Audio('https://cdn.pixabay.com/download/audio/2022/03/15/audio_23c93d516c.mp3');
-            audioRef.current.volume = 0.3;
+            // audioRef.current = new Audio('https://cdn.pixabay.com/download/audio/2022/03/15/audio_23c93d516c.mp3');
+            // if (audioRef.current) audioRef.current.volume = 0.3;
         }
 
         // 2. 控制台彩蛋
@@ -60,7 +60,7 @@ const GlobalEffects = () => {
         const clickHandler = (e: MouseEvent) => {
             const target = e.target as HTMLElement;
             if (target.closest('a, button, [role="button"]')) {
-                audioRef.current?.play().catch(err => console.error("Audio playback failed:", err));
+                // audioRef.current?.play().catch(err => console.error("Audio playback failed:", err));
 
                 // 粒子效果
                 createParticles(e.clientX, e.clientY);

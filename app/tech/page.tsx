@@ -55,10 +55,10 @@ export default function TechPage() {
                 <section className="mb-20">
                     <h2 className="text-4xl font-bold text-center mb-12">竞赛舞台</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-                        <InfoCard title="全国大学生信息安全竞赛 (CISCN)"><p className="text-cyan-400 font-semibold">全国大学生信息安全竞赛 (CISCN)</p></InfoCard>
-                        <InfoCard title="春秋杯网络安全联赛"><p className="text-cyan-400 font-semibold">春秋杯网络安全联赛</p></InfoCard>
-                        <InfoCard title="强网杯"><p className="text-cyan-400 font-semibold">强网杯</p></InfoCard>
-                        <InfoCard title="蓝桥杯"><p className="text-cyan-400 font-semibold">蓝桥杯</p></InfoCard>
+                        <InfoCard title=""><p className="text-cyan-400 font-semibold">全国大学生信息安全竞赛 (CISCN)</p></InfoCard>
+                        <InfoCard title=""><p className="text-cyan-400 font-semibold">春秋杯网络安全联赛</p></InfoCard>
+                        <InfoCard title=""><p className="text-cyan-400 font-semibold">强网杯</p></InfoCard>
+                        <InfoCard title=""><p className="text-cyan-400 font-semibold">蓝桥杯</p></InfoCard>
                     </div>
                 </section>
 

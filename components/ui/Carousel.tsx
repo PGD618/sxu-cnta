@@ -13,7 +13,7 @@ type CarouselProps = {
 };
 
 const NextArrow = (props: CustomArrowProps) => {
-    const { className, style, onClick } = props;
+    const { className, onClick } = props;
     return (
         <div
             className={`${className} slick-arrow right-[-40px] w-12 h-12 flex items-center justify-center bg-gray-800/50 rounded-full hover:bg-gray-700/80 transition-all`}
@@ -25,7 +25,7 @@ const NextArrow = (props: CustomArrowProps) => {
 };
 
 const PrevArrow = (props: CustomArrowProps) => {
-    const { className, style, onClick } = props;
+    const { className, onClick } = props;
     return (
         <div
             className={`${className} slick-arrow left-[-40px] w-12 h-12 flex items-center justify-center bg-gray-800/50 rounded-full hover:bg-gray-700/80 transition-all`}
@@ -46,8 +46,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
-        centerMode: true,
-        centerPadding: '150px', // This creates the "peek" effect
+        centerMode: false,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
         responsive: [
@@ -71,7 +70,6 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
                                 alt={`Volunteer moment ${index + 1}`}
                                 width={800}
                                 height={500}
-                                loading="lazy"
                                 className="rounded-lg object-cover w-full"
                             />
                         </div>

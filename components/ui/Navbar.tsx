@@ -8,7 +8,7 @@ import Image from 'next/image';
 // 协会LOGO
 const Logo = () => (
     <Link href="/" className="flex items-center space-x-2">
-        <img src="/logo.png" alt="CNTA Logo" className="w-8 h-8" />
+        <Image src="/logo.png" alt="CNTA Logo" width={32} height={32} className="w-8 h-8" />
         <span className="text-2xl font-bold text-white">CNTA</span>
     </Link>
 );
