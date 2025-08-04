@@ -60,7 +60,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
     };
 
     return (
-        <div className="w-full max-w-4xl mx-auto volunteer-carousel">
+        <div className="w-full max-w-3xl mx-auto volunteer-carousel">
             <Slider {...settings}>
                 {images.map((src, index) => (
                     <div key={index} className="px-4">
@@ -68,8 +68,8 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
                             <Image
                                 src={src}
                                 alt={`Volunteer moment ${index + 1}`}
-                                width={800}
-                                height={500}
+                                width={768}
+                                height={480}
                                 className="rounded-lg object-cover w-full"
                             />
                         </div>

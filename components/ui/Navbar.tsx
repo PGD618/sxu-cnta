@@ -8,7 +8,7 @@ import Image from 'next/image';
 // 协会LOGO
 const Logo = () => (
     <Link href="/" className="flex items-center space-x-2">
-        <Image src="/logo.png" alt="CNTA Logo" width={32} height={32} className="w-8 h-8" />
+        <Image src="/images/logo.jpg" alt="CNTA Logo" width={32} height={32} className="w-8 h-8" />
         <span className="text-2xl font-bold text-white">CNTA</span>
     </Link>
 );
@@ -16,7 +16,6 @@ const Logo = () => (
 // 导航项
 const navItems = [
     { name: "首页", href: "/", icon: null },
-    { name: "协会简介", href: "/about", icon: null },
     { name: "技术部", href: "/tech", icon: null },
     { name: "志愿队", href: "/volunteer", icon: null },
     { name: "加入我们", href: "/join", icon: null },
@@ -60,7 +59,7 @@ export default function Navbar() {
                         <div className="absolute right-0 top-full mt-2 p-2 bg-white rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             {/* Placeholder for QR Code Image */}
                             <div className="w-32 h-32 flex items-center justify-center overflow-hidden">
-                                <Image src="/images/QRcode/total.jpg" alt="CNTA QQ交流群" width={128} height={128} className="object-cover" />
+                                <Image src="/images/QRcode/total.png" alt="CNTA QQ交流群" width={128} height={128} className="object-cover" />
                             </div>
                         </div>
                     </div>
@@ -87,9 +86,6 @@ export default function Navbar() {
             </nav>
 
             {/* Neon bottom border */}
-            {isScrolled && (
-                <div className="h-px w-full bg-gradient-to-r from-transparent via-[var(--primary)] to-transparent animate-scan" />
-            )}
 
             {/* Mobile Menu */}
             <div

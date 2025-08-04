@@ -12,6 +12,10 @@
   --ease-bounce: cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);
@@ -66,26 +70,15 @@ img:hover {
   box-shadow: 0 0 15px var(--primary), 0 0 30px var(--primary);
 }
 
-/* --- Navbar Scan Animation --- */
-@keyframes scan {
-  0% {
-    transform: translateX(-100%);
-  }
-
-  100% {
-    transform: translateX(100%);
-  }
+.btn-glow-white {
+  transition: all 0.3s var(--ease-bounce);
+  box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
 }
 
-.animate-scan {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--secondary), transparent);
-  animation: scan 4s linear infinite;
+.btn-glow-white:hover {
+  box-shadow: 0 0 15px #ffffff, 0 0 30px #ffffff;
 }
+
 
 /* Timeline Styles */
 .timeline-container {
@@ -176,9 +169,14 @@ img:hover {
 
 /* Applying the new card style */
 .award-card {
-  width: 300px;
+  width: 100%;
+  /* Make it responsive */
+  max-width: 300px;
+  /* Keep a max-width */
   height: 200px;
   overflow: hidden;
+  margin: 0 auto;
+  /* Center the card in its column */
 }
 
 .award-card-inner {
@@ -188,6 +186,12 @@ img:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  /* Horizontally center */
+  text-align: center;
+  /* Center text for multi-line */
+  padding: 1rem;
+  /* Add some padding */
 }
 
 /* Grid Background */
@@ -333,4 +337,48 @@ img:hover {
 
 .volunteer-carousel .slick-center .transform {
   transform: scale(1.1);
+}
+
+/* --- Responsive Timeline for Mobile --- */
+@media (max-width: 768px) {
+  .timeline-container {
+    width: 95%;
+    margin: 20px auto;
+  }
+
+  .timeline-container::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  .timeline-year {
+    position: static;
+    transform: none;
+    width: auto;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-left: 40px;
+  }
+
+  .timeline-year span {
+    transform: none !important;
+    text-shadow: 0 0 10px var(--secondary) !important;
+    font-size: 2.5rem;
+  }
+
+  .timeline-awards {
+    width: 100%;
+    padding-left: 0;
+    justify-content: center;
+  }
+
+  .award-card {
+    width: 90%;
+    max-width: none;
+  }
 }
