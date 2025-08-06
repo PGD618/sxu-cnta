@@ -74,17 +74,19 @@ export default function Navbar() {
                             </div>
                         </div>
                     </div>
-                    <button className="px-4 py-2 text-sm font-semibold text-white bg-[var(--primary)] rounded-full shadow-lg transition-all duration-300 hover:shadow-[var(--primary)]/50 animate-pulse">
-                        <MessageCircle className="inline w-4 h-4 mr-2" />
-                        加入QQ群
-                    </button>
+                    <a href="https://qm.qq.com/q/p6KysfNRGo" target="_blank" rel="noopener noreferrer">
+                        <button className="px-4 py-2 text-sm font-semibold text-white bg-[var(--primary)] rounded-full shadow-lg transition-all duration-300 hover:shadow-[var(--primary)]/50 animate-pulse">
+                            <MessageCircle className="inline w-4 h-4 mr-2" />
+                            加入QQ群
+                        </button>
+                    </a>
                 </div>
 
                 {/* Mobile Menu Button */}
                 <div className="md:hidden">
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="relative z-50 text-white"
+                        className={`relative text-white ${isMenuOpen ? 'z-[1001]' : 'z-50'}`}
                         aria-label="Menu"
                         aria-controls="mobile-menu"
                         aria-expanded={isMenuOpen}
