@@ -18,6 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN">
+      <head>
+        <meta name="color-scheme" content="light" />
+      </head>
       <body className={inter.className} suppressHydrationWarning={true}>
         <DynamicParticles />
         <GlobalEffects />

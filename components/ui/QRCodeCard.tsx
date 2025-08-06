@@ -18,7 +18,7 @@ const QRCodeCard: React.FC<QRCodeCardProps> = ({ icon, title, description, qrCod
             </div>
             <p className="text-gray-400 mb-6 flex-grow">{description}</p>
             <div className="w-48 h-48 mx-auto rounded-lg flex items-center justify-center overflow-hidden bg-white p-2">
-                <Image src={qrCodeUrl} alt={altText} width={180} height={180} className="object-contain" />
+                <Image src={qrCodeUrl} alt={altText} width={180} height={180} className="object-contain" referrerPolicy="no-referrer" />
             </div>
         </div>
     );

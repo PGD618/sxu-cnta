@@ -21,7 +21,7 @@ const ImageGrid = ({ images }: { images: string[] }) => (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
         {images.map((src, index) => (
             <div key={index} className="relative aspect-video rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <Image src={src} alt={`志愿队活动照片 ${index + 1}`} layout="fill" objectFit="cover" loading="lazy" />
+                <Image src={src} alt={`志愿队活动照片 ${index + 1}`} layout="fill" objectFit="cover" loading="lazy" referrerPolicy="no-referrer" />
             </div>
         ))}
     </div>
@@ -29,35 +29,35 @@ const ImageGrid = ({ images }: { images: string[] }) => (
 
 export default function VolunteerPage() {
     const images = [
-        '/images/volunteer/photo01.jpg',
-        '/images/volunteer/photo02.jpg',
-        '/images/volunteer/photo03.jpg',
-        '/images/volunteer/photo04.jpg',
-        '/images/volunteer/photo05.jpg',
-        '/images/volunteer/photo06.jpg',
-        '/images/volunteer/photo07.jpg',
-        '/images/volunteer/photo08.jpg',
-        '/images/volunteer/photo09.jpg',
-        '/images/volunteer/photo10.jpg',
-        '/images/volunteer/photo11.jpg',
-        '/images/volunteer/photo12.jpg',
+        'https://i0.hdslb.com/bfs/new_dyn/cd5a5e64800afb959130de81582f70e42066498480.jpg',
+        'https://i0.hdslb.com/bfs/new_dyn/8a837cc697ce763d8b3e2ff9b89ebdc32066498480.jpg@536w_536h_1c_1s.webp',
+        'https://i0.hdslb.com/bfs/new_dyn/c6c228a52d6c913dec4b14e92ad2c66e2066498480.jpg@536w_536h_1c_1s.webp',
+        'https://i0.hdslb.com/bfs/new_dyn/5ba30d85a7c6ed76910c8b364ad308dc2066498480.jpg@536w_536h_1c_1s.webp',
+        'https://i0.hdslb.com/bfs/new_dyn/cd219db570431bd18ce99129100b67f82066498480.jpg@536w_536h_1c_1s.webp',
+        'https://i0.hdslb.com/bfs/new_dyn/89b9669e62be0f0c7cb0df8dda1138f52066498480.jpg@536w_536h_1c_1s.webp',
+        'https://i0.hdslb.com/bfs/new_dyn/13816b2ad9cd04caa61f66e649f38a6a2066498480.jpg@536w_536h_1c_1s.webp',
+        'https://i0.hdslb.com/bfs/new_dyn/abab426fec7c9bd5072a5add75b61d0c2066498480.jpg@536w_536h_1c_1s.webp',
+        'https://i0.hdslb.com/bfs/new_dyn/4c68c032c18a91ed01bc9dc07abf392d2066498480.jpg@536w_536h_1c_1s.webp',
+        'https://i0.hdslb.com/bfs/new_dyn/d47670a53e9e0f0ea629dbd02577e75e2066498480.jpg@536w_536h_1c_1s.webp',
+        'https://i0.hdslb.com/bfs/new_dyn/3cd2b3656c69e5234e80245864cfdc982066498480.jpg@536w_536h_1c_1s.webp',
+        'https://i0.hdslb.com/bfs/new_dyn/f624736744878c4b6e401617fce98ddc2066498480.jpg@536w_536h_1c_1s.webp',
     ];
 
     const clinicImages = [
-        '/images/volunteer/photo13.png',
-        '/images/volunteer/photo14.png',
-        '/images/volunteer/photo15.png',
-        '/images/volunteer/photo16.png',
-        '/images/volunteer/photo17.png',
-        '/images/volunteer/photo18.png',
-        '/images/volunteer/photo19.png',
-        '/images/volunteer/photo20.png',
+        'https://i0.hdslb.com/bfs/new_dyn/81d81639d325f218b814b0b966edebbb2066498480.png@536w_536h_1c_1s.webp',
+        'https://i0.hdslb.com/bfs/new_dyn/2aba81919b0d2473303d6e3e77c4859a2066498480.png@536w_536h_1c_1s.webp',
+        'https://i0.hdslb.com/bfs/new_dyn/63f045b80e065dc39caaa0311f90e1d62066498480.png@536w_536h_1c_1s.webp',
+        'https://i0.hdslb.com/bfs/new_dyn/ad9008c18a9a2cb0ff65272198d0f6122066498480.png@536w_536h_1c_1s.webp',
+        'https://i0.hdslb.com/bfs/new_dyn/89f3afeaa0a3c3f0fc2416b17fc503f72066498480.png@536w_536h_1c_1s.webp',
+        'https://i0.hdslb.com/bfs/new_dyn/aed9884226b56873dcd271105e6cca9a2066498480.png@536w_536h_1c_1s.webp',
+        'https://i0.hdslb.com/bfs/new_dyn/49503fe69f4a95b1ed03e2faa0acff392066498480.png@536w_536h_1c_1s.webp',
+        'https://i0.hdslb.com/bfs/new_dyn/66b2435566a8ba8a34c0962e3323656e2066498480.png@536w_536h_1c_1s.webp',
     ];
 
     const carouselImages = [
         ...images.slice(1, 8), // photo02 to photo08
-        '/images/volunteer/photo21.jpg',
-        '/images/volunteer/photo22.jpg',
+        'https://i0.hdslb.com/bfs/new_dyn/0535c327e8e353151208616f381465a52066498480.jpg@536w_536h_1c_1s.webp',
+        'https://i0.hdslb.com/bfs/new_dyn/608f00315c92b43f918c1756d20a37282066498480.jpg@536w_536h_1c_1s.webp',
     ];
     const familyImages = images.slice(8, 12); // photo09 to photo12
 
@@ -75,8 +75,8 @@ export default function VolunteerPage() {
                     <p>
                         数字素养与技能提升志愿者服务队是校级志愿服务组织，是学校推进数字校园建设、提升师生数字素养的重要力量。我们以 “普及数字技能，助力校园发展” 为宗旨，在校园中扮演着 “数字技能传播者”“志愿服务践行者” 和 “师生需求联结者” 的多重角色。无论是帮助老师解决办公软件难题，还是教退休教职工使用智能手机，亦或是开展数字安全知识讲座，都能看到我们活跃的身影。在这里，每一份付出都在为建设更智能、更温暖的校园添砖加瓦。
                     </p>
-                    <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-2xl mt-8">
-                        <Image src={images[0]} alt="志愿队集体照" layout="fill" objectFit="cover" loading="lazy" />
+                    <div className="relative w-full rounded-lg overflow-hidden shadow-2xl mt-8 flex justify-center items-center" style={{ maxHeight: '70vh' }}>
+                        <Image src={images[0]} alt="志愿队集体照" width={1280} height={720} className="w-auto h-auto object-contain max-w-full max-h-full" loading="lazy" referrerPolicy="no-referrer" />
                     </div>
                 </Section>
 
@@ -190,7 +190,7 @@ export default function VolunteerPage() {
                         icon={<Heart className="w-8 h-8 text-emerald-400" />}
                         title="加入志愿队"
                         description="扫描下方二维码，加入志愿队大家庭，和我们一起用技术传递温暖。"
-                        qrCodeUrl="/images/QRcode/volunteer.png"
+                        qrCodeUrl="https://i0.hdslb.com/bfs/new_dyn/1fdf34425e5bb3b23854a5b34bddc3ef2066498480.png@536w_536h_1c_1s.webp"
                         altText="志愿队QQ群二维码"
                     />
                 </section>

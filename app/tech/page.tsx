@@ -6,32 +6,50 @@ import PageHeader from '@/components/ui/PageHeader';
 import InfoCard from '@/components/ui/InfoCard';
 import QRCodeCard from '@/components/ui/QRCodeCard';
 import Carousel from '@/components/ui/Carousel';
+import GlassCard from '@/components/ui/GlassCard';
 
 const techImages = [
-    '/images/tech/photo01.jpg', '/images/tech/photo02.png', '/images/tech/photo03.png',
-    '/images/tech/photo04.png',
+    'https://i0.hdslb.com/bfs/new_dyn/920f8ad5e684e8002554401d22dee1f12066498480.jpg@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/3cbc07ebe2b0c1b6d29cb6ac131999fc2066498480.png@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/deeb2f8e60c30e693a32dd3dad1c54672066498480.png@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/cb0cb1f85917cb7acf3a0452730326842066498480.png@536w_536h_1c_1s.webp',
 ];
 
 const entropyCupImages = [
-    '/images/tech/photo10.jpg', '/images/tech/photo11.jpg', '/images/tech/photo12.jpg',
-    '/images/tech/photo13.jpg', '/images/tech/photo14.jpg', '/images/tech/photo15.jpg',
-    '/images/tech/photo16.jpg', '/images/tech/photo17.jpg',
+    'https://i0.hdslb.com/bfs/new_dyn/7869aaf85fa67bc007825c3b964a19af2066498480.jpg@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/1a548971d8cad5e5c8d4cbf33ff99e652066498480.jpg@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/09bfa312a79c28ca50ee7d40c7146cc32066498480.jpg@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/cbb9927a434374fc9df85199e2b855872066498480.jpg@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/7528434bdf2aa68ccaebccd203a08c092066498480.jpg@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/a802358b48cb900adaafee670c7eacd52066498480.jpg@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/a7e837a5a8e9b1cbb19d799bf429d2502066498480.jpg@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/f17f0c04b827b59eeb6c2e4552610fd22066498480.jpg@536w_536h_1c_1s.webp',
 ];
 
 const trainingImages = [
-    '/images/tech/photo18.png', '/images/tech/photo19.png', '/images/tech/photo20.png',
-    '/images/tech/photo21.png', '/images/tech/photo22.png', '/images/tech/photo23.png',
+    'https://i0.hdslb.com/bfs/new_dyn/60890960ba546d387ec7eb75072611372066498480.png@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/d089aab6ea7a4eee07795749c78bb8dc2066498480.jpg@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/3c3ddef3bb6a5f66f8d1c7c331d151592066498480.png@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/839889dfbf2103e509317d4fcc8007752066498480.png@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/deb7f887eb531f6ae69c4ec147e1a4942066498480.png@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/a1edaacbb8ac997616c5e1fc966a8ee52066498480.png@536w_536h_1c_1s.webp',
 ];
 
 const knowledgeBaseImages = [
-    '/images/tech/photo24.png', '/images/tech/photo25.png', '/images/tech/photo26.png',
-    '/images/tech/photo27.png', '/images/tech/photo28.png', '/images/tech/photo29.png',
-    '/images/tech/photo30.png',
+    'https://i0.hdslb.com/bfs/new_dyn/f576391add59b3f22e96f40238cf39bf2066498480.png@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/0f82aac789ad17b7260551cdbb5121ca2066498480.png@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/be2ee94fc1ab24d9ec0e9cd954b9906b2066498480.png@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/3436c31ea12dc99ecfabc17b3281be192066498480.png@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/ae0b8936281ddae4f7b7ecd3937c476e2066498480.png@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/919828dca44484d074c3b37d88b872c62066498480.png@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/9151b18ab5b759d114030727f62be4b12066498480.png@536w_536h_1c_1s.webp',
 ];
 
 const trainingSessionImages = [
-    '/images/tech/photo31.png', '/images/tech/photo32.png', '/images/tech/photo33.png',
-    '/images/tech/photo34.png', '/images/tech/photo35.png',
+    'https://i0.hdslb.com/bfs/new_dyn/f26b2131146e50f2fb2aa0a129d3f0f52066498480.png@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/6588935e18503ce7e054f689d9c2e3e92066498480.png@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/4da1c01b27502d5ee2f2aa392d05273c2066498480.png@536w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/38ec0a35f35969ee562f4ae99ea8d6512066498480.png@536w_536h_1c_1s.webp',
 ];
 
 export default function TechPage() {
@@ -80,10 +98,10 @@ export default function TechPage() {
         ),
         "竞赛舞台": (
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-                <InfoCard title=""><p className="text-cyan-400 font-semibold text-center">全国大学生信息安全竞赛 (CISCN)</p></InfoCard>
-                <InfoCard title=""><p className="text-cyan-400 font-semibold text-center">春秋杯网络安全联赛</p></InfoCard>
-                <InfoCard title=""><p className="text-cyan-400 font-semibold text-center">强网杯</p></InfoCard>
-                <InfoCard title=""><p className="text-cyan-400 font-semibold text-center">蓝桥杯</p></InfoCard>
+                <GlassCard className="flex items-center justify-center h-24"><p className="text-cyan-400 font-semibold text-center">全国大学生信息安全竞赛 (CISCN)</p></GlassCard>
+                <GlassCard className="flex items-center justify-center h-24"><p className="text-cyan-400 font-semibold text-center">春秋杯网络安全联赛</p></GlassCard>
+                <GlassCard className="flex items-center justify-center h-24"><p className="text-cyan-400 font-semibold text-center">强网杯</p></GlassCard>
+                <GlassCard className="flex items-center justify-center h-24"><p className="text-cyan-400 font-semibold text-center">蓝桥杯</p></GlassCard>
             </div>
         ),
         "近期战绩：“一如计网”战队": (
@@ -117,12 +135,13 @@ export default function TechPage() {
                     </div>
                     <div className="md:w-1/2 flex justify-center items-center">
                         <Image
-                            src="/images/tech/photo09.png"
+                            src="https://i0.hdslb.com/bfs/new_dyn/73fb991dab8acd02f69b9f7b8bfa9e962066498480.png@536w_536h_1c_1s.webp"
                             alt="“熵密杯”奖状"
                             width={500}
                             height={300}
                             loading="lazy"
                             className="rounded-lg shadow-2xl max-w-full"
+                            referrerPolicy="no-referrer"
                         />
                     </div>
                 </div>
@@ -175,7 +194,7 @@ export default function TechPage() {
                         icon={<Code className="w-8 h-8 text-emerald-400" />}
                         title="加入技术部"
                         description="扫描下方二维码，加入技术部交流群，与我们一起探索技术的无限可能。"
-                        qrCodeUrl="/images/QRcode/tech.png"
+                        qrCodeUrl="https://i0.hdslb.com/bfs/new_dyn/6148aa7f75e258cf23bd43696b3c7f192066498480.png@536w_536h_1c_1s.webp"
                         altText="技术部QQ群二维码"
                     />
                 </section>

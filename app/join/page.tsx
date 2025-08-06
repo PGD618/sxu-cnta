@@ -6,28 +6,28 @@ const qrCodes = [
         icon: <Users className="w-8 h-8 text-emerald-400" />,
         title: "CNTA总群",
         description: "加入我们的QQ总群，获取最新活动资讯，与所有成员交流。",
-        qrCodeUrl: "/images/QRcode/total.png",
+        qrCodeUrl: "https://i0.hdslb.com/bfs/new_dyn/759272e2a4f8cdf6f188c2e0cc103bec2066498480.png@536w_536h_1c_1s.webp",
         altText: "CNTA QQ总群二维码"
     },
     {
         icon: <Heart className="w-8 h-8 text-purple-400" />,
         title: "志愿队",
         description: "用技术传递温暖，参与电脑义诊、数字助老等志愿活动。",
-        qrCodeUrl: "/images/QRcode/volunteer.png",
+        qrCodeUrl: "https://i0.hdslb.com/bfs/new_dyn/1fdf34425e5bb3b23854a5b34bddc3ef2066498480.png@536w_536h_1c_1s.webp",
         altText: "志愿队QQ群二维码"
     },
     {
         icon: <Code className="w-8 h-8 text-cyan-400" />,
         title: "技术部",
         description: "与技术大牛一同成长，参与竞赛培训和前沿项目开发。",
-        qrCodeUrl: "/images/QRcode/tech.png",
+        qrCodeUrl: "https://i0.hdslb.com/bfs/new_dyn/6148aa7f75e258cf23bd43696b3c7f192066498480.png@536w_536h_1c_1s.webp",
         altText: "技术部QQ群二维码"
     },
     {
         icon: <Rss className="w-8 h-8 text-green-400" />,
         title: "微信公众号",
         description: "关注我们的官方公众号，获取协会动态、技术干货和活动预告。",
-        qrCodeUrl: "/images/QRcode/wechat.png",
+        qrCodeUrl: "https://i0.hdslb.com/bfs/new_dyn/68aed34fd3b22cc27c5071488d5da3e12066498480.png@536w_536h_1c_1s.webp",
         altText: "CNTA微信公众号二维码"
     }
 ];

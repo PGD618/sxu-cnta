@@ -8,7 +8,7 @@ import Image from 'next/image';
 // 协会LOGO
 const Logo = () => (
     <Link href="/" className="flex items-center space-x-2">
-        <Image src="/images/logo.jpg" alt="CNTA Logo" width={32} height={32} className="w-8 h-8" />
+        <Image src="https://i0.hdslb.com/bfs/new_dyn/a258a1efe1b8dc352b12260ed032ce3c2066498480.png@536w_536h_1c_1s.webp" alt="CNTA Logo" width={32} height={32} className="w-8 h-8" referrerPolicy="no-referrer" />
         <span className="text-2xl font-bold text-white">CNTA</span>
     </Link>
 );
@@ -70,7 +70,7 @@ export default function Navbar() {
                         <div className="absolute right-0 top-full mt-2 p-2 bg-white rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             {/* Placeholder for QR Code Image */}
                             <div className="w-32 h-32 flex items-center justify-center overflow-hidden">
-                                <Image src="/images/QRcode/total.png" alt="CNTA QQ交流群" width={128} height={128} className="object-cover" />
+                                <Image src="https://i0.hdslb.com/bfs/new_dyn/759272e2a4f8cdf6f188c2e0cc103bec2066498480.png@536w_536h_1c_1s.webp" alt="CNTA QQ交流群" width={128} height={128} className="object-cover" referrerPolicy="no-referrer" />
                             </div>
                         </div>
                     </div>

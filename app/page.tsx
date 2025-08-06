@@ -131,7 +131,10 @@ export default function HomePage() {
                 我们拥有专属的自习室，为成员们提供了一个稳定、高效的学习和交流环境。在这里，当你遇到技术难题时，可以随时向经验丰富的学长学姐请教，获得及时的指导和帮助。这个空间不仅是解决问题的场所，更是激发灵感、突破瓶颈的摇篮。
               </p>
             </InfoCard>
-            <Carousel images={['/images/photo01.png', '/images/photo02.png', '/images/photo03.png', '/images/photo04.png']} />
+            <Carousel images={['https://i0.hdslb.com/bfs/new_dyn/31b15b367f3509bbe4b1418f4fb21e592066498480.png@536w_536h_1c_1s.webp',
+              'https://i0.hdslb.com/bfs/new_dyn/e6ffd88cb3cc419142402479aa3b46772066498480.png@536w_536h_1c_1s.webp',
+              'https://i0.hdslb.com/bfs/new_dyn/9601c7867840df1e765392349b0a6b172066498480.png@536w_536h_1c_1s.webp',
+              'https://i0.hdslb.com/bfs/new_dyn/47b5ec17af027ff983621d869099dc702066498480.png@536w_536h_1c_1s.webp']} />
           </div>
         </section>
 
