@@ -2,13 +2,13 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { QrCode, MessageCircle } from 'lucide-react';
+import { QrCode, MessageCircle, Menu, X } from 'lucide-react';
 import Image from 'next/image';
 
 // 协会LOGO
 const Logo = () => (
     <Link href="/" className="flex items-center space-x-2">
-        <Image src="https://i0.hdslb.com/bfs/new_dyn/a258a1efe1b8dc352b12260ed032ce3c2066498480.png@536w_536h_1c_1s.webp" alt="CNTA Logo" width={32} height={32} className="w-8 h-8" referrerPolicy="no-referrer" />
+        <Image src="https://i0.hdslb.com/bfs/new_dyn/5d3e1bd27f89862095d6fd3d7f5bc1c32066498480.png@560w_560h_1e_1c.avif" alt="CNTA Logo" width={32} height={32} className="w-8 h-8" referrerPolicy="no-referrer" />
         <span className="text-2xl font-bold text-white">CNTA</span>
     </Link>
 );
@@ -84,14 +84,12 @@ export default function Navbar() {
                 <div className="md:hidden">
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className={`hamburger-button ${isMenuOpen ? 'is-active' : ''}`}
+                        className="relative z-50 text-white"
                         aria-label="Menu"
                         aria-controls="mobile-menu"
                         aria-expanded={isMenuOpen}
                     >
-                        <span className="line"></span>
-                        <span className="line"></span>
-                        <span className="line"></span>
+                        {isMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
                     </button>
                 </div>
             </nav>
