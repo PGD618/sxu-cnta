@@ -16,10 +16,10 @@ const NextArrow = (props: CustomArrowProps) => {
     const { className, onClick } = props;
     return (
         <div
-            className={`${className} slick-arrow right-[-40px] w-12 h-12 flex items-center justify-center bg-gray-800/50 rounded-full hover:bg-gray-700/80 transition-all`}
+            className={`${className} slick-arrow right-2 md:right-[-40px] w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gray-800/50 rounded-full hover:bg-gray-700/80 transition-all z-10`}
             onClick={onClick}
         >
-            <ChevronRight className="text-white" />
+            <ChevronRight className="text-white w-6 h-6" />
         </div>
     );
 };
@@ -28,10 +28,10 @@ const PrevArrow = (props: CustomArrowProps) => {
     const { className, onClick } = props;
     return (
         <div
-            className={`${className} slick-arrow left-[-40px] w-12 h-12 flex items-center justify-center bg-gray-800/50 rounded-full hover:bg-gray-700/80 transition-all`}
+            className={`${className} slick-arrow left-2 md:left-[-40px] w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gray-800/50 rounded-full hover:bg-gray-700/80 transition-all z-10`}
             onClick={onClick}
         >
-            <ChevronLeft className="text-white" />
+            <ChevronLeft className="text-white w-6 h-6" />
         </div>
     );
 };
@@ -60,10 +60,10 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
     };
 
     return (
-        <div className="w-full max-w-3xl mx-auto volunteer-carousel">
+        <div className="w-full max-w-3xl mx-auto volunteer-carousel overflow-hidden">
             <Slider {...settings}>
                 {images.map((src, index) => (
-                    <div key={index} className="px-4">
+                    <div key={index} className="px-2">
                         <div className="transform transition-transform duration-500 ease-in-out">
                             <Image
                                 src={src}

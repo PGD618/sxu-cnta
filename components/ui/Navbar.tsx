@@ -22,8 +22,8 @@ const navItems = [
 ];
 
 export default function Navbar() {
-    const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -33,9 +33,20 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.classList.add('overflow-hidden');
+        } else {
+            document.body.classList.remove('overflow-hidden');
+        }
+        return () => {
+            document.body.classList.remove('overflow-hidden');
+        };
+    }, [isMenuOpen]);
+
     return (
         <header
-            className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[var(--background)] backdrop-blur-lg' : 'bg-transparent'
+            className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[var(--background)] backdrop-blur-lg' : 'bg-transparent'
                 }`}
         >
             <nav className="container mx-auto px-6 py-4 flex justify-between items-center">

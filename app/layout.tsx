@@ -21,15 +21,13 @@ export default function RootLayout({
       <body className={inter.className} suppressHydrationWarning={true}>
         <DynamicParticles />
         <GlobalEffects />
-        <div className="relative z-10">
-          <Navbar />
-          <main>
-            <ParallaxProvider>
-              {children}
-            </ParallaxProvider>
-          </main>
-          {/* 在这里可以添加全局的 Footer */}
-        </div>
+        <Navbar />
+        <main>
+          <ParallaxProvider>
+            {children}
+          </ParallaxProvider>
+        </main>
+        {/* 在这里可以添加全局的 Footer */}
       </body>
     </html>
   );

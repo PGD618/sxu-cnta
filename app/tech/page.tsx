@@ -8,9 +8,8 @@ import QRCodeCard from '@/components/ui/QRCodeCard';
 import Carousel from '@/components/ui/Carousel';
 
 const techImages = [
-    '/images/tech/photo01.jpg', '/images/tech/photo02.jpg', '/images/tech/photo03.jpg',
-    '/images/tech/photo04.jpg', '/images/tech/photo05.jpg', '/images/tech/photo06.jpg',
-    '/images/tech/photo07.jpg', '/images/tech/photo08.jpg',
+    '/images/tech/photo01.jpg', '/images/tech/photo02.png', '/images/tech/photo03.png',
+    '/images/tech/photo04.png',
 ];
 
 const entropyCupImages = [
@@ -19,24 +18,23 @@ const entropyCupImages = [
     '/images/tech/photo16.jpg', '/images/tech/photo17.jpg',
 ];
 
-const AccordionItem = ({ title, children, isOpen, onClick }: { title: string, children: ReactNode, isOpen: boolean, onClick: () => void }) => (
-    <div className="accordion-item">
-        <button className="accordion-title" onClick={onClick}>
-            <span>{title}</span>
-            <div className={`accordion-icon ${isOpen ? 'open' : ''}`}></div>
-        </button>
-        <div className={`accordion-content ${isOpen ? 'open' : ''}`}>
-            {children}
-        </div>
-    </div>
-);
+const trainingImages = [
+    '/images/tech/photo18.png', '/images/tech/photo19.png', '/images/tech/photo20.png',
+    '/images/tech/photo21.png', '/images/tech/photo22.png', '/images/tech/photo23.png',
+];
+
+const knowledgeBaseImages = [
+    '/images/tech/photo24.png', '/images/tech/photo25.png', '/images/tech/photo26.png',
+    '/images/tech/photo27.png', '/images/tech/photo28.png', '/images/tech/photo29.png',
+    '/images/tech/photo30.png',
+];
+
+const trainingSessionImages = [
+    '/images/tech/photo31.png', '/images/tech/photo32.png', '/images/tech/photo33.png',
+    '/images/tech/photo34.png', '/images/tech/photo35.png',
+];
 
 export default function TechPage() {
-    const [openAccordion, setOpenAccordion] = useState<string | null>(null);
-
-    const handleAccordionClick = (title: string) => {
-        setOpenAccordion(openAccordion === title ? null : title);
-    };
 
     const sectionsContent = {
         "技术基因": (
@@ -55,20 +53,37 @@ export default function TechPage() {
                 </InfoCard>
             </div>
         ),
-        "专属学习空间": (
-            <InfoCard title="专属学习空间">
-                <p className="text-lg text-gray-300 leading-relaxed">
-                    技术部拥有专属的自习室，为成员们提供了一个稳定、高效的学习和交流环境。在这里，当你遇到技术难题时，可以随时向经验丰富的学长学姐请教，获得及时的指导和帮助。这个空间不仅是解决问题的场所，更是激发灵感、突破瓶颈的摇篮。
+        "团队风采": <Carousel images={techImages} />,
+        "知识库": (
+            <InfoCard title="CNTA Wiki">
+                <p className="text-lg text-gray-400 mb-6 text-center">
+                    CNTA Wiki 是一个面向社团全体成员的知识库，由技术部精心搭建与维护。它不仅是技术知识的沉淀池，更是我们共同学习、分享与成长的见证。在这里，你可以找到从入门到进阶的各类学习资料、项目文档、以及历届技术沙龙的精华回顾。
                 </p>
+                <Carousel images={knowledgeBaseImages} />
             </InfoCard>
         ),
-        "团队风采": <Carousel images={techImages} />,
+        "培训活动": (
+            <InfoCard title="技术培训与知识分享">
+                <p className="text-lg text-gray-400 mb-6 text-center">
+                    我们定期举办技术沙龙、专题讲座和实战工作坊，内容涵盖网络安全、软件开发、服务器运维等多个领域，旨在为同学们提供一个学习和交流的平台，共同成长。
+                </p>
+                <Carousel images={trainingImages} />
+            </InfoCard>
+        ),
+        "训练平台": (
+            <InfoCard title="从零开始，系统化学习">
+                <p className="text-lg text-gray-400 mb-6 text-center">
+                    我们为新成员提供了系统化的训练平台，内容从计算机基础、网络协议到前后端开发、网络安全入门，无论基础如何，都能找到适合自己的学习节奏。通过项目驱动的实践，你将逐步构建解决复杂问题的能力，并在团队协作中快速成长。
+                </p>
+                <Carousel images={trainingSessionImages} />
+            </InfoCard>
+        ),
         "竞赛舞台": (
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-                <InfoCard title=""><p className="text-cyan-400 font-semibold">全国大学生信息安全竞赛 (CISCN)</p></InfoCard>
-                <InfoCard title=""><p className="text-cyan-400 font-semibold">春秋杯网络安全联赛</p></InfoCard>
-                <InfoCard title=""><p className="text-cyan-400 font-semibold">强网杯</p></InfoCard>
-                <InfoCard title=""><p className="text-cyan-400 font-semibold">蓝桥杯</p></InfoCard>
+                <InfoCard title=""><p className="text-cyan-400 font-semibold text-center">全国大学生信息安全竞赛 (CISCN)</p></InfoCard>
+                <InfoCard title=""><p className="text-cyan-400 font-semibold text-center">春秋杯网络安全联赛</p></InfoCard>
+                <InfoCard title=""><p className="text-cyan-400 font-semibold text-center">强网杯</p></InfoCard>
+                <InfoCard title=""><p className="text-cyan-400 font-semibold text-center">蓝桥杯</p></InfoCard>
             </div>
         ),
         "近期战绩：“一如计网”战队": (
@@ -106,6 +121,7 @@ export default function TechPage() {
                             alt="“熵密杯”奖状"
                             width={500}
                             height={300}
+                            loading="lazy"
                             className="rounded-lg shadow-2xl max-w-full"
                         />
                     </div>
@@ -130,7 +146,7 @@ export default function TechPage() {
                     我们不只有网络安全...(*￣０￣)ノ
                 </p>
             </InfoCard>
-        )
+        ),
     };
 
     return (
@@ -142,27 +158,13 @@ export default function TechPage() {
                     titleClassName="bg-gradient-to-r from-cyan-400 to-purple-500"
                 />
 
-                {/* Desktop View */}
-                <div className="hidden md:block">
+                {/* Content View */}
+                <div className="">
                     {Object.entries(sectionsContent).map(([title, content]) => (
                         <section key={title} className="mb-20">
                             <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">{title}</h2>
                             {content}
                         </section>
-                    ))}
-                </div>
-
-                {/* Mobile Accordion View */}
-                <div className="md:hidden accordion">
-                    {Object.entries(sectionsContent).map(([title, content]) => (
-                        <AccordionItem
-                            key={title}
-                            title={title}
-                            isOpen={openAccordion === title}
-                            onClick={() => handleAccordionClick(title)}
-                        >
-                            {content}
-                        </AccordionItem>
                     ))}
                 </div>
 

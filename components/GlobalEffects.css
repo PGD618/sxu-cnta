@@ -16,8 +16,14 @@
     width: 100vw;
     height: 100vh;
     pointer-events: none;
+    /* 默认状态下置于底层 */
+    z-index: -1;
+}
+
+.page-transition.active {
+    /* 仅在激活时置于顶层 */
     z-index: 9998;
-    overflow: hidden;
+    pointer-events: auto;
 }
 
 .page-transition .hexagon-grid {

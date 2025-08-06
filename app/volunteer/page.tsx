@@ -21,7 +21,7 @@ const ImageGrid = ({ images }: { images: string[] }) => (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
         {images.map((src, index) => (
             <div key={index} className="relative aspect-video rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <Image src={src} alt={`志愿队活动照片 ${index + 1}`} layout="fill" objectFit="cover" />
+                <Image src={src} alt={`志愿队活动照片 ${index + 1}`} layout="fill" objectFit="cover" loading="lazy" />
             </div>
         ))}
     </div>
@@ -43,7 +43,22 @@ export default function VolunteerPage() {
         '/images/volunteer/photo12.jpg',
     ];
 
-    const carouselImages = images.slice(1, 8); // photo02 to photo08
+    const clinicImages = [
+        '/images/volunteer/photo13.png',
+        '/images/volunteer/photo14.png',
+        '/images/volunteer/photo15.png',
+        '/images/volunteer/photo16.png',
+        '/images/volunteer/photo17.png',
+        '/images/volunteer/photo18.png',
+        '/images/volunteer/photo19.png',
+        '/images/volunteer/photo20.png',
+    ];
+
+    const carouselImages = [
+        ...images.slice(1, 8), // photo02 to photo08
+        '/images/volunteer/photo21.jpg',
+        '/images/volunteer/photo22.jpg',
+    ];
     const familyImages = images.slice(8, 12); // photo09 to photo12
 
     return (
@@ -61,7 +76,7 @@ export default function VolunteerPage() {
                         数字素养与技能提升志愿者服务队是校级志愿服务组织，是学校推进数字校园建设、提升师生数字素养的重要力量。我们以 “普及数字技能，助力校园发展” 为宗旨，在校园中扮演着 “数字技能传播者”“志愿服务践行者” 和 “师生需求联结者” 的多重角色。无论是帮助老师解决办公软件难题，还是教退休教职工使用智能手机，亦或是开展数字安全知识讲座，都能看到我们活跃的身影。在这里，每一份付出都在为建设更智能、更温暖的校园添砖加瓦。
                     </p>
                     <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-2xl mt-8">
-                        <Image src={images[0]} alt="志愿队集体照" layout="fill" objectFit="cover" />
+                        <Image src={images[0]} alt="志愿队集体照" layout="fill" objectFit="cover" loading="lazy" />
                     </div>
                 </Section>
 
@@ -101,6 +116,55 @@ export default function VolunteerPage() {
                         </div>
                     </div>
                     <Carousel images={carouselImages} />
+                </Section>
+
+                {/* 电脑义诊活动 */}
+                <Section title="电脑义诊——为你的数字生活保驾护航！">
+                    <div className="text-center mb-8">
+                        <p className="text-xl italic">你的电脑卡顿、蓝屏、中毒？别急，义诊来帮你！</p>
+                        <p className="mt-4">现代教育技术学院联合计算机与网络技术协会、数字素养与技能提升志愿者服务队，推出 ​免费电脑义诊服务，为全校师生解决各类电脑问题！</p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-12 items-start">
+                        <div>
+                            <h3 className="text-2xl font-bold text-cyan-400 mb-4">​<span className="mr-2">🔧</span>服务内容​</h3>
+                            <ul className="list-disc list-inside space-y-2 pl-4 text-gray-300">
+                                <li>系统重装 & 优化</li>
+                                <li>电脑清灰 & 硬件检测</li>
+                                <li>病毒查杀 & 软件修复</li>
+                                <li>网络问题排查</li>
+                                <li>一对一技术咨询</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 className="text-2xl font-bold text-cyan-400 mb-4"><span className="mr-2">⏰</span>​服务时间​</h3>
+                            <ul className="space-y-2 pl-4">
+                                <li><strong className="font-semibold text-pink-400">​教师专属​：</strong>每周三下午（办公室上门服务）</li>
+                                <li><strong className="font-semibold text-purple-400">​学生专场​：</strong>每周四晚（思创楼B203集中义诊）</li>
+                            </ul>
+                            <p className="mt-4 text-sm text-gray-400 pl-4">活动持续至第16周，抓紧时间哦！</p>
+                        </div>
+                    </div>
+
+                    <div className="mt-16 text-center space-y-4">
+                        <p className="text-2xl font-bold">​我们的目标​</p>
+                        <p className="text-xl">打造专业、高效的电脑义诊品牌，用技术温暖校园！</p>
+                        <p className="text-3xl font-extrabold mt-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">​电脑不给力？义诊来助力！​​</p>
+                        <div className="flex justify-center items-center space-x-4 text-lg font-semibold tracking-widest">
+                            <span>​免费</span>
+                            <span className="text-gray-500">·</span>
+                            <span>专业</span>
+                            <span className="text-gray-500">·</span>
+                            <span>高效​</span>
+                        </div>
+                        <p className="mt-2 text-gray-400"><span className="mr-2">📍</span>东山校区思创楼B座B203</p>
+                    </div>
+
+                    <div className="mt-12">
+                        <Carousel images={clinicImages} />
+                    </div>
+
+                    <p className="text-center mt-12 text-sm text-gray-500">— ​现代教育技术学院 & 计算机与网络技术协会 联合呈现 —</p>
                 </Section>
 
                 {/* 四、相亲相爱一家人 */}
