@@ -1,5 +1,5 @@
 "use client";
-import { useState, ReactNode } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import { Shield, Cpu, Target, Bot, Server, Network, Code } from 'lucide-react';
 import PageHeader from '@/components/ui/PageHeader';
@@ -7,6 +7,7 @@ import InfoCard from '@/components/ui/InfoCard';
 import QRCodeCard from '@/components/ui/QRCodeCard';
 import Carousel from '@/components/ui/Carousel';
 import GlassCard from '@/components/ui/GlassCard';
+import CyberpunkDivider from '@/components/ui/CyberpunkDivider';
 
 const techImages = [
     'https://i0.hdslb.com/bfs/new_dyn/920f8ad5e684e8002554401d22dee1f12066498480.jpg@536w_536h_1c_1s.webp',
@@ -24,6 +25,14 @@ const entropyCupImages = [
     'https://i0.hdslb.com/bfs/new_dyn/a802358b48cb900adaafee670c7eacd52066498480.jpg@536w_536h_1c_1s.webp',
     'https://i0.hdslb.com/bfs/new_dyn/a7e837a5a8e9b1cbb19d799bf429d2502066498480.jpg@536w_536h_1c_1s.webp',
     'https://i0.hdslb.com/bfs/new_dyn/f17f0c04b827b59eeb6c2e4552610fd22066498480.jpg@536w_536h_1c_1s.webp',
+];
+
+const aiSafetyCompImages = [
+    'https://i0.hdslb.com/bfs/new_dyn/ddb8fd4f992dca1648e84fd48066e9112066498480.png@714w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/c14b0b4cb25df1d3fa99c8a9983041772066498480.png@714w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/a5ab1986eecda28ee8a28912772441952066498480.png@714w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/e3a4fa1e303582e1c9a7286598e4ab1c2066498480.png@714w_536h_1c_1s.webp',
+    'https://i0.hdslb.com/bfs/new_dyn/7944ed5773059786c886782f4c694df82066498480.png@714w_536h_1c_1s.webp'
 ];
 
 const trainingImages = [
@@ -53,6 +62,15 @@ const trainingSessionImages = [
 ];
 
 export default function TechPage() {
+    const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+
+    const openLightbox = (imageUrl: string) => {
+        setLightboxImage(imageUrl);
+    };
+
+    const closeLightbox = () => {
+        setLightboxImage(null);
+    };
 
     const sectionsContent = {
         "技术基因": (
@@ -104,33 +122,27 @@ export default function TechPage() {
                 <GlassCard className="flex items-center justify-center h-24"><p className="text-cyan-400 font-semibold text-center">蓝桥杯</p></GlassCard>
             </div>
         ),
-        "近期战绩：“一如计网”战队": (
-            <InfoCard title='第三届"熵密杯"密码安全挑战赛卓越表现'>
+        "近期战绩": (
+            <InfoCard title='近期竞赛成果'>
+                {/* 熵密杯 */}
                 <div className="flex flex-col md:flex-row gap-8 items-start">
                     <div className="space-y-6 text-lg text-gray-300 leading-relaxed md:w-1/2">
+                        <h3 className="text-3xl font-bold text-center mb-4 text-purple-400">第三届&quot;熵密杯&quot;密码安全挑战赛</h3>
                         <div>
-                            <h3 className="text-2xl font-semibold text-cyan-400 mb-2">国家级奖项</h3>
+                            <h4 className="text-2xl font-semibold text-cyan-400 mb-2">国家级奖项</h4>
                             <p>从全国205支战队中脱颖而出，斩获山西省高校第一名、全省所有参赛队伍第二名。</p>
                         </div>
                         <div>
-                            <h3 className="text-2xl font-semibold text-cyan-400 mb-2">顶尖对手较量</h3>
+                            <h4 className="text-2xl font-semibold text-cyan-400 mb-2">顶尖对手较量</h4>
                             <p>与清华大学、中山大学等密码学强校同台竞技，展现专业实力。</p>
                         </div>
                         <div>
-                            <h3 className="text-2xl font-semibold text-cyan-400 mb-2">技术亮点</h3>
+                            <h4 className="text-2xl font-semibold text-cyan-400 mb-2">技术亮点</h4>
                             <ul className="list-disc list-inside space-y-1 pl-4">
                                 <li>密码算法深度解析能力</li>
                                 <li>加密协议漏洞精准挖掘</li>
                                 <li>密钥攻防场景策略部署</li>
                             </ul>
-                        </div>
-                        <div>
-                            <h3 className="text-2xl font-semibold text-cyan-400 mb-2">学院支持与培养体系</h3>
-                            <p>现代教育技术学院通过学科竞赛提升学生创新能力，计算机与网络技术协会提供技术培训与实战平台。</p>
-                        </div>
-                        <div>
-                            <h3 className="text-2xl font-semibold text-cyan-400 mb-2">精神内核</h3>
-                            <p className="italic">{'"热爱如一，创新不止" —— "一如计网"战队名诠释了团队对网络安全技术的执着追求和在数字世界持续突破的青春力量。'}</p>
                         </div>
                     </div>
                     <div className="md:w-1/2 flex justify-center items-center">
@@ -140,20 +152,68 @@ export default function TechPage() {
                             width={500}
                             height={300}
                             loading="lazy"
-                            className="rounded-lg shadow-2xl max-w-full"
+                            className="rounded-lg shadow-2xl w-full h-auto max-w-full cursor-pointer hover:scale-105 transition-transform duration-300"
                             referrerPolicy="no-referrer"
+                            onClick={() => openLightbox("https://i0.hdslb.com/bfs/new_dyn/73fb991dab8acd02f69b9f7b8bfa9e962066498480.png")}
+                        />
+                    </div>
+                </div>
+
+                <div className="my-12"><CyberpunkDivider /></div>
+
+                {/* AI安全竞赛 */}
+                <div className="flex flex-col md:flex-row-reverse gap-8 items-start">
+                    <div className="space-y-6 text-lg text-gray-300 leading-relaxed md:w-1/2">
+                        <h3 className="text-3xl font-bold text-center mb-4 text-purple-400">首届全国大学生AI安全竞赛</h3>
+                        <div>
+                            <h4 className="text-2xl font-semibold text-cyan-400 mb-2">国家级荣誉</h4>
+                            <p>在首届全国大学生人工智能安全竞赛中，我院学子斩获全国二等奖2项、三等奖1项。</p>
+                        </div>
+                        <div>
+                            <h4 className="text-2xl font-semibold text-cyan-400 mb-2">高水平竞技</h4>
+                            <p>与来自全国88所高校（含25所985高校）的350支队伍同台竞技，展现了我院学子的专业实力。</p>
+                        </div>
+                        <div>
+                            <h4 className="text-2xl font-semibold text-cyan-400 mb-2">核心技术挑战</h4>
+                            <ul className="list-disc list-inside space-y-1 pl-4">
+                                <li>数据投毒检测</li>
+                                <li>深度伪造识别</li>
+                                <li>对抗样本防御</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="md:w-1/2 flex justify-center items-center">
+                        <Image
+                            src="https://i0.hdslb.com/bfs/new_dyn/8fb544d19706948b720b9f6d41d53f0f2066498480.png"
+                            alt="AI安全竞赛奖状"
+                            width={500}
+                            height={500}
+                            loading="lazy"
+                            className="rounded-lg shadow-2xl w-full h-auto max-w-full cursor-pointer hover:scale-105 transition-transform duration-300"
+                            referrerPolicy="no-referrer"
+                            onClick={() => openLightbox("https://i0.hdslb.com/bfs/new_dyn/8fb544d19706948b720b9f6d41d53f0f2066498480.png")}
                         />
                     </div>
                 </div>
             </InfoCard>
         ),
-        "“熵密杯”风采": <Carousel images={entropyCupImages} />,
+        "竞赛风采": (
+            <div className="grid md:grid-cols-2 gap-8">
+                <InfoCard title="“熵密杯”风采" className="overflow-hidden">
+                    <Carousel images={entropyCupImages} />
+                </InfoCard>
+                <InfoCard title="AI安全竞赛风采" className="overflow-hidden">
+                    <Carousel images={aiSafetyCompImages} />
+                </InfoCard>
+            </div>
+        ),
         "荣誉殿堂": (
             <InfoCard title="荣誉殿堂">
                 <p className="text-lg text-gray-400 mb-6">
                     我们在各大竞赛中屡获殊荣，这不仅是技术的证明，更是团队协作与不懈努力的结晶。部分荣誉包括：
                 </p>
                 <ul className="list-disc list-inside text-left mx-auto max-w-2xl text-gray-300 space-y-2 mb-8">
+                    <li>首届全国大学生人工智能安全竞赛全国二等奖、三等奖</li>
                     <li>华北五省“信达杯”本科组二等奖、三等奖</li>
                     <li>“熵密杯”密码安全挑战赛优胜奖</li>
                     <li>“蓝桥杯”全国总决赛三等奖、优秀奖，省级一、二、三等奖若干</li>
@@ -170,6 +230,29 @@ export default function TechPage() {
 
     return (
         <div className="relative z-10 min-h-screen text-white">
+            {lightboxImage && (
+                <div
+                    className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
+                    onClick={closeLightbox}
+                >
+                    <div className="relative max-w-4xl max-h-full" onClick={(e) => e.stopPropagation()}>
+                        <Image
+                            src={lightboxImage}
+                            alt="Lightbox"
+                            width={1200}
+                            height={800}
+                            className="object-contain max-w-full max-h-[90vh]"
+                            referrerPolicy="no-referrer"
+                        />
+                        <button
+                            onClick={closeLightbox}
+                            className="absolute top-4 right-4 text-white text-3xl font-bold"
+                        >
+                            &times;
+                        </button>
+                    </div>
+                </div>
+            )}
             <div className="container mx-auto px-4 pt-28 pb-12">
                 <PageHeader
                     title="技术部"
@@ -178,7 +261,7 @@ export default function TechPage() {
                 />
 
                 {/* Content View */}
-                <div className="">
+                <div className="max-w-4xl mx-auto">
                     {Object.entries(sectionsContent).map(([title, content]) => (
                         <section key={title} className="mb-20">
                             <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">{title}</h2>

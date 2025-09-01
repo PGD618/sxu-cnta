@@ -53,7 +53,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
             {
                 breakpoint: 768,
                 settings: {
-                    centerPadding: '40px'
+
                 }
             }
         ]
@@ -63,7 +63,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
         <div className="w-full max-w-sm mx-auto volunteer-carousel overflow-hidden">
             <Slider {...settings}>
                 {images.map((src, index) => (
-                    <div key={index} className="px-2">
+                    <div key={index} className="">
                         <div className="transform transition-transform duration-500 ease-in-out">
                             <Image
                                 src={src}
